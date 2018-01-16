@@ -1,14 +1,13 @@
 def verify(isbn):
-    if not isbn:
+    isbn = isbn.replace("-", "")
+    if len(isbn) != 10:
         return False
-    count = 10
     product = 0
-    for i in isbn.replace('-', ''):
-        if i == 'X' and count == 1:
-            i = 10
+    for a, b in zip(isbn, range(10, 0, -1)):
+        if a == 'X' and b == 1:
+            a = 10
         try:
-            product += int(i) * count
-            count -= 1
+            product += int(a) * b
         except:
             return False
 
