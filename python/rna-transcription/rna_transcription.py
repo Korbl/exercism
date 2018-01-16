@@ -5,12 +5,10 @@ def to_rna(dna_strand):
         'T': 'A',
         'A': 'U',
     }
-    rna_string = ""
+    # rna_string = ""
 
-    for i in dna_strand:
-        try:
-            rna_string = rna_string + dna_to_rna[i]
-        except:
-            raise ValueError('Not a valid DNA string')
-
-    return rna_string
+    # for i in dna_strand:
+    try:
+        return "".join(dna_to_rna[x] for x in dna_strand)
+    except:
+        raise ValueError('Not a valid DNA string')
