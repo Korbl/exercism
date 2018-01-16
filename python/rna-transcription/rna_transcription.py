@@ -5,9 +5,7 @@ def to_rna(dna_strand):
         'T': 'A',
         'A': 'U',
     }
-    # rna_string = ""
 
-    # for i in dna_strand:
     try:
         return "".join(dna_to_rna[x] for x in dna_strand)
     except:
