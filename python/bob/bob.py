@@ -1,10 +1,9 @@
 def hey(phrase):
-    words = phrase.split()
-    if not words:
+    if phrase.isspace() or not phrase:
         return "Fine. Be that way!"
     elif phrase.isupper():
         return "Whoa, chill out!"
-    elif words[-1][-1] == "?":
+    elif phrase.rstrip().endswith('?'):
         return "Sure."
     else:
         return "Whatever."
